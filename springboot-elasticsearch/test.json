@@ -1,0 +1,28 @@
+curl --request PUT \
+--url http: //localhost:9200/opinion_event_info \
+--header 'content-type: application/json' \
+--data '{
+"mappings": {
+"properties": {
+"text": {"type": "text"}
+}
+}
+}'
+curl --request POST \
+--url http: //localhost:9200/opinion_event_info/_doc/_bulk \
+--header 'content-type: application/json' \
+--data '{ "index":{} }
+{"index":{
+}
+}
+'
+
+
+
+curl --request PUT \
+--url http: //localhost:9200/opinion_event_info/_doc/zeCCN30BHnZ1OiWm6HSy \
+--header 'content-type: application/json' \
+--data '{
+"text":"121312",
+"name":"Blue"
+}'
